@@ -1,10 +1,5 @@
 module DataMemory(input read, write, input [12:0] abus, dbus_in, output reg [12:0] dbus_out);
-	reg [15:0] mem [0:63];
-	
-	initial
-	begin
-		mem[0] = 16'h0000;
-	end
+	reg [12:0] mem [0:63];
 	
 	always@(read or abus)
 	begin
