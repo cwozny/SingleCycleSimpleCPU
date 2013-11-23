@@ -2,3 +2,14 @@
 *.bak
 *.swp
 *~
+*.qws
+
+# Verilog Simulation Files
+*qsim*
+*modelsim*
+
+# Verilog Output Files
+*output_files*
+
+# Verilog DB
+*db*
