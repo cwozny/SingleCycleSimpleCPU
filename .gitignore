@@ -13,3 +13,8 @@
 
 # Verilog DB
 *db*
+
+# LaTeX Artifacts
+*.log
+*.synctex.gz
+*.aux
