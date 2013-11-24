@@ -31,6 +31,13 @@ applicable agreement for further details.
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
+		(pt 0 48)
+		(input)
+		(text "ac[12..0]" (rect 0 0 33 12)(font "Arial" ))
+		(text "ac[12..0]" (rect 21 43 54 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
 		(pt 184 32)
 		(output)
 		(text "rd_mem" (rect 0 0 35 12)(font "Arial" ))
@@ -78,6 +85,13 @@ applicable agreement for further details.
 		(text "alu_sub" (rect 0 0 30 12)(font "Arial" ))
 		(text "alu_sub" (rect 133 123 163 135)(font "Arial" ))
 		(line (pt 184 128)(pt 168 128)(line_width 1))
+	)
+	(port
+		(pt 184 144)
+		(output)
+		(text "ld_imm" (rect 0 0 29 12)(font "Arial" ))
+		(text "ld_imm" (rect 134 139 163 151)(font "Arial" ))
+		(line (pt 184 144)(pt 168 144)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 168 160)(line_width 1))
