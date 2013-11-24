@@ -1,6 +1,16 @@
-module Controller(input [2:0] opcode, input [15:0] ac, output reg rd_mem, wr_mem, ac_src, ld_ac, pc_src, alu_add, alu_sub, ld_imm);
-	always@(opcode)
+module Controller(input [2:0] opcode, input [15:0] ac, input rst, output reg rd_mem, wr_mem, ac_src, ld_ac, pc_src, alu_add, alu_sub, ld_imm, halt);
+	initial
 	begin
+		halt = 1'b0;
+	end
+
+	always@(opcode or rst)
+	begin
+		if(rst)
+		begin
+			halt = 1'b0;
+		end
+		
 		rd_mem = 1'b0;
 		wr_mem = 1'b0;
 		ac_src = 1'b0;
@@ -13,9 +23,12 @@ module Controller(input [2:0] opcode, input [15:0] ac, output reg rd_mem, wr_mem
 		case(opcode)
 			3'b000 : // LDA (Load Accumulator)
 				begin
-					rd_mem = 1'b1;
-					ac_src = 1'b1;
-					ld_ac = 1'b1;
+					if(halt == 1'b0)
+					begin
+						rd_mem = 1'b1;
+						ac_src = 1'b1;
+						ld_ac = 1'b1;
+					end
 				end
 			3'b001 : // STA (Store Accumulator)
 				begin
@@ -49,7 +62,7 @@ module Controller(input [2:0] opcode, input [15:0] ac, output reg rd_mem, wr_mem
 				end
 			3'b111 : // HLT (Halt, no more fetching until a new start)
 				begin
-					
+					halt = 1'b1;
 				end
 		endcase
 	end
