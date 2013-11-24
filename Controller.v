@@ -1,4 +1,4 @@
-module Controller(input [2:0] opcode, input [12:0] ac, output reg rd_mem, wr_mem, ac_src, ld_ac, pc_src, alu_add, alu_sub, ld_imm);
+module Controller(input [2:0] opcode, input [15:0] ac, output reg rd_mem, wr_mem, ac_src, ld_ac, pc_src, alu_add, alu_sub, ld_imm);
 	always@(opcode)
 	begin
 		rd_mem = 1'b0;

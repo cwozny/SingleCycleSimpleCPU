@@ -1,4 +1,4 @@
-module Accumulator(input clk, load, input [12:0] din, output reg [12:0] dout);
+module Accumulator(input clk, load, input [15:0] din, output reg [15:0] dout);
 	always@(posedge clk)
 	begin
 		if(load)

@@ -1,4 +1,4 @@
-module InstructionMemory(input [12:0] abus, output reg [15:0] dbus);
+module InstructionMemory(input [15:0] abus, output reg [15:0] dbus);
 	reg [15:0] mem [0:63];
 	
 	initial

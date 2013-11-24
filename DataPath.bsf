@@ -40,8 +40,8 @@ applicable agreement for further details.
 	(port
 		(pt 192 48)
 		(output)
-		(text "addr[12..0]" (rect 0 0 41 12)(font "Arial" ))
-		(text "addr[12..0]" (rect 130 43 171 55)(font "Arial" ))
+		(text "addr[15..0]" (rect 0 0 41 12)(font "Arial" ))
+		(text "addr[15..0]" (rect 130 43 171 55)(font "Arial" ))
 		(line (pt 192 48)(pt 176 48)(line_width 3))
 	)
 	(drawing

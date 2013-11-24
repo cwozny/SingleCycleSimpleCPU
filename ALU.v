@@ -1,4 +1,4 @@
-module ALU(input add, input sub, input [12:0] a,b, output reg [12:0] out);
+module ALU(input add, input sub, input [15:0] a,b, output reg [15:0] out);
 	always@(a or b or add or sub)
 	begin
 		if(add)

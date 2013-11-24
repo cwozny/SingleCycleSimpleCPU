@@ -1,5 +1,5 @@
-module DataMemory(input clk, read, write, input [12:0] abus, dbus_in, output /*reg*/ [12:0] dbus_out);
-	reg [12:0] mem [0:63];
+module DataMemory(input clk, read, write, input [15:0] abus, dbus_in, output [15:0] dbus_out);
+	reg [15:0] mem [0:63];
 	/*
 	always@(read or abus)
 	begin
@@ -17,5 +17,5 @@ module DataMemory(input clk, read, write, input [12:0] abus, dbus_in, output /*r
 		end
 	end
 	
-	assign dbus_out = (read)? mem[abus] : 13'bz;
+	assign dbus_out = (read)? mem[abus] : 16'bz;
 endmodule

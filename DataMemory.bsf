@@ -47,22 +47,22 @@ applicable agreement for further details.
 	(port
 		(pt 0 80)
 		(input)
-		(text "abus[12..0]" (rect 0 0 42 12)(font "Arial" ))
-		(text "abus[12..0]" (rect 21 75 63 87)(font "Arial" ))
+		(text "abus[15..0]" (rect 0 0 42 12)(font "Arial" ))
+		(text "abus[15..0]" (rect 21 75 63 87)(font "Arial" ))
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
 		(pt 0 96)
 		(input)
-		(text "dbus_in[12..0]" (rect 0 0 54 12)(font "Arial" ))
-		(text "dbus_in[12..0]" (rect 21 91 75 103)(font "Arial" ))
+		(text "dbus_in[15..0]" (rect 0 0 54 12)(font "Arial" ))
+		(text "dbus_in[15..0]" (rect 21 91 75 103)(font "Arial" ))
 		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
 		(pt 216 32)
 		(output)
-		(text "dbus_out[12..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "dbus_out[12..0]" (rect 135 27 195 39)(font "Arial" ))
+		(text "dbus_out[15..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "dbus_out[15..0]" (rect 135 27 195 39)(font "Arial" ))
 		(line (pt 216 32)(pt 200 32)(line_width 3))
 	)
 	(drawing
