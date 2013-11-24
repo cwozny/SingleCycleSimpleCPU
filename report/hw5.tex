@@ -88,6 +88,6 @@ In the waveform above, you can see the accumulator being loaded with the value 9
 
 \newpage
 
-\textbf{Conclusion:} 
+\textbf{Conclusion:} In conclusion, the single cycle CPU performs as expected. After basing my design on the example shown in class and completing a majority of the assignment, it came to my attention that the ADD instruction described in class was actually an ADDI (add immediate). I decided to follow the original example because the ADD instruction is shown as not reading from memory in the controller truth table on slide 35 of the annotated PDF. Due to time constraints, the portion of the assignment which asked to write a Verilog testbench which translated mnemonics to machine code and executed them was unable to be completed. In order to test the execution of the assembly code, the InstructionMemory.v file needs to be modified and the instructions can be listed in the $mem$ array as 16-bit machine code.
 
 \end{document}
