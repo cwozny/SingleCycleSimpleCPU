@@ -213,7 +213,7 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 1360 152 1528 264)
-	(text "Mux_2to1_12b" (rect 5 0 75 12)(font "Arial" ))
+	(text "Mux_2to1_16b" (rect 5 0 75 12)(font "Arial" ))
 	(text "inst8" (rect 8 96 31 108)(font "Arial" ))
 	(port
 		(pt 0 32)
@@ -271,7 +271,7 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 88 328 256 440)
-	(text "Mux_2to1_12b" (rect 5 0 75 12)(font "Arial" ))
+	(text "Mux_2to1_16b" (rect 5 0 75 12)(font "Arial" ))
 	(text "inst9" (rect 8 96 31 108)(font "Arial" ))
 	(port
 		(pt 0 32)
@@ -307,7 +307,7 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 480 352 648 464)
-	(text "Mux_2to1_12b" (rect 5 0 75 12)(font "Arial" ))
+	(text "Mux_2to1_16b" (rect 5 0 75 12)(font "Arial" ))
 	(text "inst10" (rect 8 96 37 108)(font "Arial" ))
 	(port
 		(pt 0 32)
