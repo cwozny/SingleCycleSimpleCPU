@@ -38,11 +38,13 @@ module Controller(input [2:0] opcode, input [15:0] ac, input rst, output reg rd_
 				begin
 					alu_add = 1'b1;
 					ld_ac = 1'b1;
+					rd_mem = 1'b1;
 				end
 			3'b011 : // SUB (Subtract Addressed Memory from Accumulator)
 				begin
 					alu_sub = 1'b1;
 					ld_ac = 1'b1;
+					rd_mem = 1'b1;
 				end
 			3'b100 : // JMP (Unconditional Direct Jump)
 				begin
