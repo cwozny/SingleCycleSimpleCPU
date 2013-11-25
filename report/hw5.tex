@@ -28,8 +28,8 @@ Homework 5\\
   \textbf{Opcode} & \textbf{Instruction} & \textbf{Comments} \\\hline
   000 & LDA & Load accumulator from memory\\\hline
   001 & STA & Store accumulator in memory\\\hline
-  010 & ADD & Add value to accumulator \\\hline
-  011 & SUB & Subtract value from accumulator \\\hline
+  010 & ADD & Add value in memory to accumulator \\\hline
+  011 & SUB & Subtract value in memory from accumulator \\\hline
   100 & JMP & Unconditional direct jump \\\hline
   101 & JEZ & Direct jump when accumulator is zero \\\hline
   110 & LDI & Load accumulator immediately, sign extend \\\hline
@@ -62,32 +62,34 @@ Homework 5\\
 
 \textbf{Simulation:} The waveform below shows the following sequence of instruction calls:
 \begin{verbatim}
-LDI 9 // load the value 9 immediately into the accumulator
+LDI A // load the value A immediately into the accumulator
 STA 0 // store the value of the accumulator into memory address 0
 LDI 4 // load the value 4 immediately into the accumulator
 STA 1 // store the value of the accumulator into memory address 1
+LDI 1 // load the value 1 immediately into the accumulator
+STA 2 // store the value of the accumulator into memory address 2
 LDA 0 // load the value at memory address 0 into the accumulator
-ADD 1 // add 1 to the accumulator
+ADD 2 // add the value at memory address 2 to the accumulator
 STA 0 // store the value of the accumulator into memory address 0
 LDA 1 // load the value at memory address 1 into the accumulator
-SUB 1 // subtract 1 from the accumulator
+SUB 2 // subtract the value at memory address 2 from the accumulator
 STA 1 // store the value in the accumulator into memory address 1
-JEZ C // if value in accumulator is 0, move PC to instruction memory address 12
-JMP 4 // move the PC to instruction memory address 4
+JEZ E // if value in accumulator is 0, move PC to instruction memory address 14
+JMP 6 // move the PC to instruction memory address 6
 HLT // halt execution of processor until reset
 \end{verbatim}
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.25]{waveform.png}\\
+\includegraphics[scale=0.29]{waveform.png}\\
 \end{center}
 \caption{Output from Single Cycle CPU}
 \end{figure}
 
-In the waveform above, you can see the accumulator being loaded with the value 9 and then stored into memory address 0. Then the accumulator is loaded with the value 4 and then store it into memory address 1. Then memory address 0 is loaded into the accumulator and incremented then stored back into the same memory address. Memory address 1 is then loaded into the accumulator and decremented and stored back into memory address 1. This continues until the accumulator is 0 and then is sent into the halt state where no instructions are executed and no memory is modified. Then the reset line is pulled high and the sequence described above is restarted.\\
+In the waveform above, you can see the accumulator being loaded with the value 9 and then stored into memory address 0. Then the accumulator is loaded with the value 4 and then store it into memory address 1. After this 1 is loaded into the accumulator and stored in memory address 2. Memory address 0 is loaded into the accumulator and incremented then stored back into the same memory address. Memory address 1 is then loaded into the accumulator and decremented and stored back into memory address 1. This continues until the accumulator is 0 and then is sent into the halt state where no instructions are executed and no memory is modified. Then the reset line is pulled high and the sequence described above is restarted.\\
 
 \newpage
 
-\textbf{Conclusion:} In conclusion, the single cycle CPU performs as expected. After basing my design on the example shown in class and completing a majority of the assignment, it came to my attention that the ADD instruction described in class was actually an ADDI (add immediate). I decided to follow the original example because the ADD instruction is shown as not reading from memory in the controller truth table on slide 35 of the annotated PDF. Due to time constraints, the portion of the assignment which asked to write a Verilog testbench which translated mnemonics to machine code and executed them was unable to be completed. In order to test the execution of the assembly code, the InstructionMemory.v file needs to be modified and the instructions can be listed in the $mem$ array as 16-bit machine code.
+\textbf{Conclusion:} In conclusion, the single cycle CPU performs as expected. Due to time constraints, the portion of the assignment which asked to write a Verilog testbench which translated mnemonics to machine code and executed them was unable to be completed. In order to test the execution of the assembly code, the InstructionMemory.v file needs to be modified and the instructions can be listed in the $mem$ array as 16-bit machine code.
 
 \end{document}
